@@ -17,7 +17,7 @@ module.exports = {
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Project Template',  // UPDATE WITH NEW PROJECT!
+      title: 'Trivia-API', 
       template: './src/index.html',
       inject: 'body'
     })

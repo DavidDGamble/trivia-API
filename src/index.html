@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Trivia</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="test">
+      <form id="trivia">
+        <label for="limit">
+          <input type="text" id="limit" placeholder=" Number of Questions:">
+        </label>
+        <br>
+        <select name="category" id="category">
+          <option value="9">General Knowledge</option>
+          <option value="21">Sports</option>
+          <option value="23">History</option>
+          <option value="26">Celebrities</option>
+        </select>
+        <br>
+        <select name="difficulty" id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <br>
+        <select name="qType" id="type">
+          <option value="boolean">True or False</option>
+          <option value="multiple">Multiple Choice</option>
+        </select>
+        <br>
+        <button id="submit" type="submit">Submit!</button>
+      </form>
+    </div>
+      <div class="card hidden" style="width: 18rem; text-align: center;">
+        <div class="card-body">
+          <h5 class="card-title">Question: <span id="qNum"></span></h5>
+          <p id="question" class="card-text"></p>
+          <a href="#" class="btn btn-primary">Next Question</a>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
