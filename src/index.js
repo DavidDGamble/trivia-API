@@ -22,7 +22,6 @@ function getQs(num, category, difficulty, type) {
 const printElements = (qData) => {
   qAndAs = new QandAs();
   let dataArray = qData.results;
-  console.log(dataArray);
   dataArray.forEach(element => {
     if (element.type === 'multiple') {
       qAndAs.questions.push(element.question);
@@ -33,7 +32,7 @@ const printElements = (qData) => {
       qAndAs.answers.push(element.correct_answer);
     }
   });
-  console.log(qAndAs);
+  popCard();
 };
 
 const printError = (errorArray) => {
@@ -43,7 +42,9 @@ const printError = (errorArray) => {
 const popCard = () => {
   document.getElementById("qNum").innerHTML = qAndAs.index + 1;
   document.getElementById("question").innerHTML = qAndAs.questions[qAndAs.index];
-
+  if (qAndAs.wrongAnswers.length === 0) {
+    
+  }
 }
 
 const handleSubmit = (event) => {
