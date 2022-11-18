@@ -5,6 +5,7 @@ export default class TriviaQs {
       const url = `https://opentdb.com/api.php?amount=${num}&category=${category}&difficulty=${difficulty}&type=${type}`;
       request.addEventListener('loadend', function () {
         const response = JSON.parse(this.responseText);
+        console.log(this);
         if (this.status === 200) {
           resolve(response);
         } else {

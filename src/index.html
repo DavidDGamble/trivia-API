@@ -34,16 +34,48 @@
         <button id="submit" type="submit">Submit!</button>
       </form>
     </div>
-      <div class="card hidden" style="width: 18rem; text-align: center;">
+    <div id="card" class="hidden">
+      <div class="card" style="width: auto; text-align: center;">
         <div class="card-body">
           <h5 class="card-title">Question: <span id="qNum"></span></h5>
           <p id="question" class="card-text"></p>
-          <div id="choices">  
+          <div id="true-false" class="hidden">
+            <input class="true-false" type="radio" name="answer" id="true" value="True" checked> True
+
+            <br>
+            <input class="true-false" type="radio" name="answer" id="false" value="False"> False
+
           </div>
-          <a href="#" class="btn btn-primary">Next Question</a>
+          <div id="multi" class="hidden">
+            <input class="multi" type="radio" name="answer" id="1" checked>
+            <label for="1" id="1display"></label>
+            <br>
+            <input class="multi" type="radio" name="answer" id="2">
+            <label for="2" id="2display"></label>
+            <br>
+            <input class="multi" type="radio" name="answer" id="3">
+            <label for="3" id="3display"></label>
+            <br>
+            <input class="multi" type="radio" name="answer" id="4">
+            <label for="4" id="4display"></label>
+          </div>
+          <div id="next-btn">
+            <a id="next" href="#" class="btn btn-primary">Next Question</a>
+          </div>
+          <div id="finish-btn" class="hidden">
+            <a id="finish" href="#" class="btn btn-primary">Finish</a>
+          </div>
         </div>
       </div>
-  </div>
+    </div>
+    <div id="answerCard" class="hidden">
+      <div class="card" style="width: auto; text-align: center;">
+        <div class="card-body">
+          <h5 id="numCorrect" class="card-title"></h5>
+          <div id="compare">
+          </div>
+          <a id="restart" href="#" class="btn btn-primary">Restart</a>
+        </div>
 </body>
 
 </html>
