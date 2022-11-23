@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Trivia</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="test">
+      <form id="trivia">
+        <label for="limit">
+          <input type="text" id="limit" placeholder=" Number of Questions:">
+        </label>
+        <br>
+        <select name="category" id="category">
+          <option value="9">General Knowledge</option>
+          <option value="21">Sports</option>
+          <option value="23">History</option>
+          <option value="26">Celebrities</option>
+        </select>
+        <br>
+        <select name="difficulty" id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <br>
+        <select name="qType" id="type">
+          <option value="boolean">True or False</option>
+          <option value="multiple">Multiple Choice</option>
+        </select>
+        <br>
+        <button id="submit" type="submit">Submit!</button>
+      </form>
+      <h3 id="error"></h3>
+    </div>
+    <div id="card" class="hidden">
+      <div class="card" style="width: auto; text-align: center;">
+        <div class="card-body">
+          <h5 class="card-title">Question: <span id="qNum"></span></h5>
+          <p id="question" class="card-text"></p>
+          <div id="true-false" class="hidden">
+            <input class="true-false" type="radio" name="answer" id="true" value="True" checked> True
+            <br>
+            <input class="true-false" type="radio" name="answer" id="false" value="False"> False
+          </div>
+          <div id="multi" class="hidden">
+            <input class="multi" type="radio" name="answer" id="1" checked>
+            <label for="1" id="1display"></label>
+            <br>
+            <input class="multi" type="radio" name="answer" id="2">
+            <label for="2" id="2display"></label>
+            <br>
+            <input class="multi" type="radio" name="answer" id="3">
+            <label for="3" id="3display"></label>
+            <br>
+            <input class="multi" type="radio" name="answer" id="4">
+            <label for="4" id="4display"></label>
+          </div>
+          <div id="next-btn">
+            <a id="next" href="#" class="btn btn-primary">Next Question</a>
+          </div>
+          <div id="finish-btn" class="hidden">
+            <a id="finish" href="#" class="btn btn-primary">Finish</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="answerCard" class="hidden">
+      <div class="card" style="width: auto; text-align: center;">
+        <div class="card-body">
+          <h5 id="numCorrect" class="card-title"></h5>
+          <div id="compare">
+          </div>
+          <a id="restart" href="#" class="btn btn-primary">Restart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="bundle.js"></script></body>
+
+</html>
