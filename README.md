@@ -1,30 +1,28 @@
-## Setup for template
-* _$ rm -r .git_
-* _$ git init_
-* _$ git remote add dg [GitHub Repository]_
-* _$ git add .gitignore_
-* _$ git commit -m "Add .gitignore to project."_
-* _$ git push dg main_
-* _$ npm init -y_
-* _$ npm install_
-* _$ npm run build_
+# _Trivia API_
 
-# _{Application Name}_
+#### By: _**David Gamble & Yoonis Ali**_
 
-#### By: _**{List of contributors}**_
-
-#### _{Brief description of application}_
+#### _A website to create and playb trivia games._
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _HTML_
+* _CSS_
+* _JavaScript_
+* _babel_
+* _webpack_
+* _css-loader_
+* _eslint_
+* _file-loader_
+* _gh-pages_
+* _html-loader_
+* _jest_
+* _style-loader_
+* _bootstrap_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This website allows the user to input different parameters to generate random triva questions to answer and displays the results of the game at the end._
 
 ## Setup/Installation Requirements
 
@@ -38,12 +36,11 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _No known bugs_
 
 ## License
 
-_Copyright (c) 2022 David Gamble_
+_Copyright (c) 2022 David Gamble & Yoonis Ali_
 
 _Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:_
 
