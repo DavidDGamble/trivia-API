@@ -1,23 +1,24 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import TriviaQs from './js/APIrequest.js';
+import {TriviaQs, handleError} from './js/APIrequest.js';
 import QandAs from './js/qobject.js';
 
-// Buisness Logic
 let qAndAs;
 
 
 function getQs(num, category, difficulty, type) {
   let promise = TriviaQs.getQs(num, category, difficulty, type);
   promise.then(function(qData) {
-    printElements(qData);
-  }, function(errorArray) {
-    printError(errorArray);
+    if (handleError(qData) === 'success') {
+      printElements(qData);
+    } else {
+      printError(handleError(qData));
+    }
+  }, function(error) {
+    printError(error);
   });
 }
-
-// UI Logic -------------------------------------------------------------------
 
 const printElements = (qData) => {
   qAndAs = new QandAs();
@@ -32,13 +33,13 @@ const printElements = (qData) => {
       qAndAs.answers.push(element.correct_answer);
     }
   });
+  document.querySelector("#test").setAttribute("class", "hidden");
+  document.getElementById("card").removeAttribute("class", "hidden");
   popCard();
-  console.log(qData);
-  console.log(qAndAs);
 };
 
 const printError = (errorArray) => {
-  console.log(errorArray);
+  document.getElementById('error').innerHTML = errorArray;
 };
 
 const popCard = () => {
@@ -73,8 +74,6 @@ const handleSubmit = (event) => {
   const userDifficulty = document.getElementById('difficulty').value;
   const userType = document.getElementById('type').value;
   getQs(userNum, userCategory, userDifficulty, userType);
-  document.querySelector("#test").setAttribute("class", "hidden");
-  document.getElementById("card").removeAttribute("class", "hidden");
 };
 
 const handleNext = (event) => {
@@ -100,6 +99,9 @@ const handleFinish = (event) => {
   document.getElementById("numCorrect").innerHTML= `You got ${qAndAs.check()} out of ${qAndAs.answers.length} correct!`;
   document.getElementById('compare').innerHTML = null;
   for(let index = 0; index <= qAndAs.answers.length - 1; index++) {
+    let userQuestionP = document.createElement('p');
+    userQuestionP.innerHTML = `Q${index + 1}: ${qAndAs.questions[index]}`;
+    document.getElementById("compare").append(userQuestionP);
     let userP = document.createElement("p");
     userP.innerHTML = `Your answer is ${qAndAs.userAnswers[index]}!`;
     document.getElementById("compare").append(userP);
