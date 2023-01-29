@@ -26,10 +26,20 @@ _This website allows the user to input different parameters to generate random t
 
 ## Setup/Installation Requirements
 
-* _clone the repository to your desktop from: https://github.com/DavidDGamble/trivia-API.git_
-* _enter command in terminal: $ npm install_
-* _enter command in terminal: $ npm run build_
-* _enter command in terminal: $ npm run start_
+* _clone the repository to your desktop from:_ 
+```
+https://github.com/DavidDGamble/trivia-API.git
+```
+* _enter the following commands in the terminal in the root repositry trivia-API_
+```
+npm i
+```
+```
+npm run build
+```
+```
+npm run start
+```
 
 * _go to https://daviddgamble.github.io/trivia-API/ to play directly_
 
